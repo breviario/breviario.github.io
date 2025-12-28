@@ -2,117 +2,159 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>La Liturgie des heures</title>
-  <meta name="description" content="Version numérique à l’usage privé — table des célébrations." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Liturgie des Heures</title>
 
   <style>
     :root{
-      --bg: #f2f2f2;          /* лёгкая “сероватость”, как ты хотел */
-      --text: #1c1c1c;
-      --muted: #3a3a3a;
-      --btn: #e6e6e6;
-      --btn-border: #bdbdbd;
-      --btn-hover: #dddddd;
-      --link: #1a5fb4;
-    }
-    body{
-      margin:0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.35;
-    }
-    .page{
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 40px 18px 28px;
-      text-align: center;
-    }
-    h1{
-      margin: 0 0 14px;
-      font-size: 40px;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-    }
-    .subtitle{
-      margin: 0 0 18px;
-      font-size: 18px;
-      color: var(--muted);
-    }
-    .lead{
-      margin: 0 0 26px;
-      font-size: 18px;
-      color: var(--text);
+      --bg:#ececec;
+      --violet:#5a36ff;
+      --red:#ff3b59;
+
+      --btn-violet:#5a36ff;
+      --btn-yellow:#f4ef93;
+      --btn-green:#46b800;
+
+      --txt-dark:#3a3a3a;
     }
 
-    .buttons{
-      display: grid;
-      grid-template-columns: repeat(3, minmax(180px, 1fr));
-      gap: 14px;
-      justify-items: stretch;
-      margin: 0 auto 34px;
-      max-width: 860px;
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--txt-dark);
     }
-    @media (max-width: 760px){
-      .buttons{ grid-template-columns: repeat(2, minmax(160px, 1fr)); }
-      h1{ font-size: 32px; }
+
+    .page{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 18px;
     }
-    @media (max-width: 460px){
-      .buttons{ grid-template-columns: 1fr; }
+
+    .wrap{
+      width:min(980px, 100%);
+      text-align:center;
+    }
+
+    h1{
+      margin:0 0 16px 0;
+      color:var(--violet);
+      font-weight:500;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:clamp(40px, 5vw, 64px);
+    }
+
+    .sub{
+      margin:0;
+      color:var(--violet);
+      font-weight:400;
+      font-size:clamp(18px, 2.3vw, 24px);
+      line-height:1.35;
+    }
+
+    .lead{
+      margin:36px 0 28px 0;
+      color:var(--red);
+      font-size:clamp(18px, 2.2vw, 24px);
+      font-weight:400;
+    }
+
+    .grid{
+      display:grid;
+      gap:16px 22px;
+      justify-content:center;
+      grid-template-columns:repeat(4, minmax(160px, 210px));
+      margin:0 auto;
+      width:fit-content;
+    }
+
+    .grid.row2{
+      margin-top:14px;
+      grid-template-columns:repeat(3, minmax(220px, 300px));
     }
 
     .btn{
-      display: inline-block;
-      padding: 14px 10px;
-      background: var(--btn);
-      border: 1px solid var(--btn-border);
-      border-radius: 8px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 650;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: background-color .15s ease;
-      user-select: none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:56px;
+      padding:0 14px;
+      text-decoration:none;
+      font-weight:600;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      border-radius:2px;
+      border:1px solid rgba(0,0,0,.08);
     }
-    .btn:hover{ background: var(--btn-hover); }
-    .btn:focus{ outline: 2px solid #000; outline-offset: 2px; }
 
-    footer{
-      margin-top: 10px;
-      font-size: 16px;
+    .v{ background:var(--btn-violet); color:#fff; }
+    .y{ background:var(--btn-yellow); color:#6b6400; }
+    .g{ background:var(--btn-green); color:#fff; }
+
+    .below{
+      margin-top:46px;
+      color:var(--violet);
+      font-size:16px;
     }
-    footer a{
-      color: var(--link);
-      text-decoration: none;
+
+    .below a{
+      color:var(--violet);
+      text-decoration:none;
+      font-weight:600;
     }
-    footer a:hover{ text-decoration: underline; }
+
+    .below a:hover{
+      text-decoration:underline;
+    }
+
+    @media (max-width: 860px){
+      .grid{
+        grid-template-columns:repeat(2, minmax(160px, 1fr));
+        width:100%;
+      }
+      .grid.row2{
+        grid-template-columns:repeat(1, minmax(220px, 1fr));
+      }
+      .btn{ height:54px; }
+    }
   </style>
 </head>
 
 <body>
   <main class="page">
-    <h1>LA&nbsp;LITURGIE&nbsp;DES&nbsp;HEURES</h1>
+    <div class="wrap">
 
-    <p class="subtitle">Version numérique à l’usage privé</p>
+      <h1>LA LITURGIE DES HEURES</h1>
 
-    <p class="lead">Veuillez consulter ou télécharger les célébrations voulues</p>
+      <p class="sub">Version numérique à l’usage privé</p>
 
-    <section class="buttons" aria-label="Temps liturgiques">
-      <!-- Имена файлов можно поменять позже; главное — чтобы совпали с тем, что реально лежит в репозитории -->
-      <a class="btn" href="avent.html">AVENT</a>
-      <a class="btn" href="noel.html">NOËL</a>
-      <a class="btn" href="to-i-ix.html">TO&nbsp;I–IX</a>
-      <a class="btn" href="careme.html">CARÊME</a>
-      <a class="btn" href="temps-pascal.html">TEMPS&nbsp;PASCAL</a>
-      <a class="btn" href="to-vii-xviii.html">TO&nbsp;VII–XVIII</a>
-      <a class="btn" href="to-xix-xxxiv.html">TO&nbsp;XIX–XXXIV</a>
-    </section>
+      <p class="lead">
+        Veuillez consulter ou télécharger les célébrations voulues.
+      </p>
 
-    <footer>
-      <a href="presentation.html">Présentation</a>
-    </footer>
+      <div class="grid">
+        <a class="btn v" href="avent.html">Avent</a>
+        <a class="btn y" href="noel.html">Noël</a>
+        <a class="btn g" href="to-1-9.html">TO I–IX</a>
+        <a class="btn v" href="careme.html">Carême</a>
+      </div>
+
+      <div class="grid row2">
+        <a class="btn y" href="temps-pascal.html">Temps pascal</a>
+        <a class="btn g" href="to-7-18.html">TO VII–XVIII</a>
+        <a class="btn g" href="to-19-34.html">TO XIX–XXXIV</a>
+      </div>
+
+      <div class="below">
+        <a href="presentation.html">Présentation</a>
+      </div>
+
+    </div>
   </main>
 </body>
 </html>
