@@ -21,7 +21,6 @@
       color:var(--txt-dark);
     }
 
-    /* Компактно по высоте, но без уменьшения кегля */
     .page{
       min-height:100vh;
       display:flex;
@@ -46,23 +45,32 @@
     }
 
     .intro{
-      font-size:22px;          /* возвращено */
-      margin:0 0 14px 0;
+      font-size:22px;
+      margin:0 0 20px 0; /* увеличено */
     }
 
     p{
-      font-size:18px;          /* возвращено */
-      line-height:1.6;         /* возвращено */
-      margin:0 0 16px 0;
+      font-size:18px;
+      line-height:1.6;
+      margin:0 0 22px 0; /* увеличено */
     }
 
     .contact{
-      margin-top:18px;
+      margin-top:26px; /* увеличено */
       font-size:18px;
     }
 
+    .contact a{
+      color:var(--txt-dark);
+      text-decoration:none;
+    }
+
+    .contact a:hover{
+      text-decoration:underline;
+    }
+
     .back{
-      margin-top:18px;
+      margin-top:22px;
       text-align:center;
     }
 
@@ -100,7 +108,8 @@
         Les textes ici proposés, y compris les textes bibliques issus
         de la <em>Nouvelle traduction liturgique</em>, sont tirés du site de l’AELF
         (Association Épiscopale Liturgique pour les pays Francophones)
-        — www.aelf.org — et sont utilisés avec son autorisation.
+        — <a href="https://www.aelf.org" target="_blank" rel="noopener">www.aelf.org</a> —
+        et sont utilisés avec son autorisation.
       </p>
 
       <p>
@@ -115,7 +124,8 @@
       </p>
 
       <p class="contact">
-        <strong>Contact :</strong> liturgie@breviario.fr<br />
+        <strong>Contact :</strong>
+        <a href="mailto:liturgie@breviario.fr">liturgie@breviario.fr</a><br />
         Merci pour vos remarques éventuelles.
       </p>
 
