@@ -27,6 +27,7 @@
       color:var(--txt-dark);
     }
 
+    /* Заголовок "приподнят" — больше верхний паддинг */
     .page{
       min-height:100vh;
       display:flex;
@@ -49,16 +50,18 @@
       font-size:clamp(40px, 5vw, 64px);
     }
 
+    /* Подзаголовок: +1 пункт (раньше) и ещё +2 пункта (последняя правка) */
     .sub{
       margin:0;
       color:var(--violet);
       font-weight:400;
-      font-size:clamp(19px, 2.4vw, 25px);
+      font-size:clamp(21px, 2.6vw, 27px);
       line-height:1.35;
     }
 
+    /* Разрыв между подзаголовком и lead увеличен */
     .lead{
-      margin:28px 0 32px 0;
+      margin:40px 0 32px 0;
       color:var(--bordo);
       font-size:clamp(19px, 2.4vw, 25px);
       font-weight:400;
@@ -97,14 +100,15 @@
     .y{ background:var(--btn-yellow); color:#6b6400; }
     .g{ background:var(--btn-green); color:#fff; }
 
+    /* Présentation: тот же кегль, что и sub; разрыв до кнопок = 40px */
     .below{
-      margin-top:68px;
+      margin-top:40px;
     }
 
     .below a{
       color:var(--violet);
       text-decoration:none;
-      font-size:18px;
+      font-size:clamp(21px, 2.6vw, 27px); /* как .sub */
       font-style:italic;
       font-variant:small-caps;
       letter-spacing:1px;
