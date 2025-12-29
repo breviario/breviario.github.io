@@ -37,16 +37,16 @@
       text-align:center;
     }
 
-    /* Ссылка-шапка (увеличена ×2 и поднята максимально высоко) */
+    /* Ссылка-шапка */
     .site-home{
       display:block;
-      margin-top:-56px;
-      margin-bottom:0;
+      margin-top:-56px;      /* максимально высоко в рамках текущей схемы */
+      margin-bottom:56px;    /* вместе с h1 margin-top (24px) даст 80px, как у h1->кнопки */
       text-decoration:none;
-      color:var(--violet);
-      font-weight:600;
-      letter-spacing:2px;
-      font-size:clamp(26px, 3vw, 32px);
+      color:rgba(90,54,255,.78); /* не агрессивно: тот же тон, но приглушённый */
+      font-weight:650;
+      letter-spacing:3.3px; /* +1pt относительно прежнего ощущения */
+      font-size:clamp(22px, 2.6vw, 28px); /* примерно ×1.5 */
     }
 
     .site-home:hover{
