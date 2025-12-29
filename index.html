@@ -16,13 +16,12 @@
       --btn-violet:#5a36ff;
       --btn-green:#46b800;
 
-      /* яркий красный для надписей/рамок */
+      /* яркий красный */
       --red:#ff0000;
 
-      /* Noël: максимально бледно-золотистый */
+      /* максимально бледно-золотистый */
       --gold-pale:#fff7cc;
 
-      /* обводки */
       --border-soft:rgba(0,0,0,.08);
     }
 
@@ -104,22 +103,14 @@
       user-select:none;
     }
 
-    /* базовые цвета (как раньше) */
+    /* базовые цвета */
     .v{ background:var(--btn-violet); color:#fff; }
     .g{ background:var(--btn-green); color:#fff; }
 
-    /* Noël: бледно-золотистый фон + красный текст */
-    .y-noel{
+    /* Noël и Temps pascal — одинаковые */
+    .y{
       background:var(--gold-pale);
       color:var(--red);
-      border:1px solid var(--border-soft);
-    }
-
-    /* Temps pascal: белый фон + красная рамка + красный текст */
-    .y-pascal{
-      background:#ffffff;
-      color:var(--red);
-      border:2px solid var(--red);
     }
 
     .below{
@@ -167,22 +158,15 @@
 
       <div class="grid">
         <a class="btn v" href="avent.html">Avent</a>
-        <a class="btn y-noel" href="noel.html">Noël</a>
+        <a class="btn y" href="noel.html">Noël</a>
         <a class="btn g" href="to-1-9.html">TO I–IX</a>
         <a class="btn v" href="careme.html">Carême</a>
       </div>
 
       <div class="grid row2">
-        <a class="btn y-pascal" href="temps-pascal.html">Temps pascal</a>
+        <a class="btn y" href="temps-pascal.html">Temps pascal</a>
         <a class="btn g" href="to-7-18.html">TO VII–XVIII</a>
         <a class="btn g" href="to-19-34.html">TO XIX–XXXIV</a>
       </div>
 
       <div class="below">
-        <a href="presentation.html">Présentation</a>
-      </div>
-
-    </div>
-  </main>
-</body>
-</html>
