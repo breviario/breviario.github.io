@@ -38,17 +38,9 @@
     <section class="card" id="acces-rapide">
       <h2>Accès rapide</h2>
 
-      <!-- +12pt "реально": делаем 24pt, чтобы было заметно поверх твоих базовых отступов -->
-      <div style="height:24pt" aria-hidden="true"></div>
+      <!-- +12pt между заголовком и кнопками: НЕСХЛОПЫВАЕМЫЙ спейсер -->
+      <span aria-hidden="true" style="display:block;height:12pt;line-height:12pt;">&nbsp;</span>
 
       <div class="grid semaines" aria-label="Accès par semaine">
         <a class="tile" href="#semaine-1">I semaine</a>
         <a class="tile" href="#semaine-2">II semaine</a>
-        <a class="tile" href="#semaine-3">III semaine</a>
-        <a class="tile" href="#semaine-4">IV semaine</a>
-      </div>
-
-      <p class="note">Pour l’instant, ce sont des ancres (placeholders). Ensuite, on branchera vers les pages “jours” ou “offices”.</p>
-
-      <div class="grid" aria-label="Accès thématique">
-        <a class="tile" href="#dimanches">Dimanches</a>
