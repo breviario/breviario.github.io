@@ -7,13 +7,20 @@
   <meta name="description" content="Avent — repères, structure et accès rapide aux offices dans La Liturgie des Heures." />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Correctifs spécifiques à Avent -->
   <style>
-    /* 1) Гарантируем верхний индекс для re/e (на случай, если styles.css его "сбивает") */
-    sup {
-      font-size: 0.7em;
-      vertical-align: super;
-      line-height: 0;
+    /* 1) Принудительный верхний индекс (точечно: кнопки недель + заголовки недель) */
+    #acces-rapide .semaines sup,
+    #semaine-1 sup, #semaine-2 sup, #semaine-3 sup, #semaine-4 sup {
+      font-size: 0.62em !important;
+      line-height: 0 !important;
+      vertical-align: baseline !important;   /* сбрасываем возможные странные правила */
+      position: relative !important;
+      top: -0.55em !important;              /* реальный "суперскрипт" */
+    }
+
+    /* Чтобы не разъезжалась строка в кнопках */
+    #acces-rapide .semaines a.tile {
+      line-height: 1.1 !important;
     }
 
     /* 2) +12pt между заголовком и кнопками недель */
@@ -41,100 +48,4 @@
     </div>
   </header>
 
-  <main id="contenu" class="container">
-    <section class="card">
-      <h2>En bref</h2>
-      <ul>
-        <li><strong>Deux parties</strong> : jusqu’au 16 décembre (Avent “ordinaire”), puis du 17 au 24 (grandes antiennes “O”).</li>
-        <li><strong>Dimanches</strong> : 1er, 2e, 3e (Gaudete), 4e dimanche de l’Avent.</li>
-        <li><strong>Couleur</strong> : violet (rose possible au 3e dimanche).</li>
-      </ul>
-    </section>
-
-    <section class="card" id="acces-rapide">
-      <h2>Accès rapide</h2>
-
-      <!-- Boutons semaines (corrigés) -->
-      <div class="grid semaines" aria-label="Accès par semaine">
-        <a class="tile" href="#semaine-1">I<sup>re</sup> semaine</a>
-        <a class="tile" href="#semaine-2">II<sup>e</sup> semaine</a>
-        <a class="tile" href="#semaine-3">III<sup>e</sup> semaine</a>
-        <a class="tile" href="#semaine-4">IV<sup>e</sup> semaine</a>
-      </div>
-
-      <p class="note">Pour l’instant, ce sont des ancres (placeholders). Ensuite, on branchera vers les pages “jours” ou “offices”.</p>
-
-      <!-- Accès thématiques conservés -->
-      <div class="grid" aria-label="Accès thématique">
-        <a class="tile" href="#dimanches">Dimanches</a>
-        <a class="tile" href="#feries">Féries</a>
-        <a class="tile" href="#du17au24">Du 17 au 24 décembre</a>
-        <a class="tile" href="#liens">Liens</a>
-      </div>
-    </section>
-
-    <!-- Sections semaines (placeholders) -->
-    <section class="card" id="semaine-1">
-      <h2>I<sup>re</sup> semaine</h2>
-      <p>(À relier : dimanche I + féries de la semaine.)</p>
-    </section>
-
-    <section class="card" id="semaine-2">
-      <h2>II<sup>e</sup> semaine</h2>
-      <p>(À relier : dimanche II + féries de la semaine.)</p>
-    </section>
-
-    <section class="card" id="semaine-3">
-      <h2>III<sup>e</sup> semaine</h2>
-      <p>(À relier : dimanche III — Gaudete + féries de la semaine.)</p>
-    </section>
-
-    <section class="card" id="semaine-4">
-      <h2>IV<sup>e</sup> semaine</h2>
-      <p>(À relier : dimanche IV + féries, puis bascule vers le 17–24.)</p>
-    </section>
-
-    <section class="card" id="dimanches">
-      <h2>Dimanches de l’Avent</h2>
-      <ol>
-        <li><a href="#" aria-disabled="true">1er dimanche — (à relier)</a></li>
-        <li><a href="#" aria-disabled="true">2e dimanche — (à relier)</a></li>
-        <li><a href="#" aria-disabled="true">3e dimanche (Gaudete) — (à relier)</a></li>
-        <li><a href="#" aria-disabled="true">4e dimanche — (à relier)</a></li>
-      </ol>
-    </section>
-
-    <section class="card" id="feries">
-      <h2>Féries</h2>
-      <p>Deux sections pratiques :</p>
-      <ul>
-        <li><strong>Avant le 17</strong> : féries “classiques” de l’Avent.</li>
-        <li><strong>Du 17 au 24</strong> : féries privilégiées avec tonalité plus immédiate vers Noël.</li>
-      </ul>
-    </section>
-
-    <section class="card" id="du17au24">
-      <h2>Du 17 au 24 décembre</h2>
-      <p>Zone à relier vers chaque date (17, 18, …, 24). On peut faire :</p>
-      <ul>
-        <li>une page par jour (ex : <code>avent-12-17.html</code>)</li>
-        <li>ou une page unique avec sections par date</li>
-      </ul>
-    </section>
-
-    <section class="card" id="liens">
-      <h2>Liens</h2>
-      <ul>
-        <li><a href="index.html">Retour à l’accueil</a></li>
-        <li><a href="presentation.html">Présentation</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© La Liturgie des Heures — GitHub Pages</p>
-    </div>
-  </footer>
-</body>
-</html>
+  <main id="contenu" clas
