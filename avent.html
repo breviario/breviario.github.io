@@ -7,17 +7,9 @@
   <meta name="description" content="Avent — repères, structure et accès rapide aux offices dans La Liturgie des Heures." />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Correctifs spécifiques à Avent -->
   <style>
-    /* +12pt между заголовком и кнопками недель (форсируем поверх styles.css) */
-    #acces-rapide h2 + .grid.semaines {
-      margin-top: 12pt !important;
-    }
-
-    /* -12pt: опустить возвратную ссылку (список ссылок) в конце */
-    #liens h2 + ul {
-      margin-top: 12pt !important;
-    }
+    /* Спейсер: гарантированный вертикальный отступ, не зависящий от margin/gap */
+    .spacer-12pt { height: 12pt; }
   </style>
 </head>
 
@@ -51,7 +43,9 @@
     <section class="card" id="acces-rapide">
       <h2>Accès rapide</h2>
 
-      <!-- Boutons semaines (sans re/e, с пробелом) -->
+      <!-- +12pt между заголовком и кнопками -->
+      <div class="spacer-12pt" aria-hidden="true"></div>
+
       <div class="grid semaines" aria-label="Accès par semaine">
         <a class="tile" href="#semaine-1">I semaine</a>
         <a class="tile" href="#semaine-2">II semaine</a>
@@ -62,4 +56,21 @@
       <p class="note">Pour l’instant, ce sont des ancres (placeholders). Ensuite, on branchera vers les pages “jours” ou “offices”.</p>
 
       <div class="grid" aria-label="Accès thématique">
-        <a class="tile" hr
+        <a class="tile" href="#dimanches">Dimanches</a>
+        <a class="tile" href="#feries">Féries</a>
+        <a class="tile" href="#du17au24">Du 17 au 24 décembre</a>
+        <a class="tile" href="#liens">Liens</a>
+      </div>
+    </section>
+
+    <section class="card" id="semaine-1">
+      <h2>I semaine</h2>
+      <p>(À relier : dimanche I + féries de la semaine.)</p>
+    </section>
+
+    <section class="card" id="semaine-2">
+      <h2>II semaine</h2>
+      <p>(À relier : dimanche II + féries de la semaine.)</p>
+    </section>
+
+    <section
