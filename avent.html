@@ -3,125 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Temps de l’Avent — La Liturgie des Heures</title>
+  <title>Avent — La Liturgie des Heures</title>
+  <meta name="description" content="Avent — repères, structure et accès rapide aux offices dans La Liturgie des Heures." />
+  <link rel="stylesheet" href="styles.css" />
 
+  <!-- Correctifs spécifiques à Avent -->
   <style>
-    :root{
-      --bg:#f5f5f5;
-      --violet:#5a36ff;
-      --txt-dark:#3a3a3a;
+    /* +12pt между заголовком и кнопками */
+    #acces-rapide .grid { margin-top: 12pt; }
 
-      --btn-violet:#5a36ff;
-      --border-soft:rgba(0,0,0,.08);
-    }
-
-    *{ box-sizing:border-box; }
-
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--txt-dark);
-    }
-
-    .page{
-      min-height:100vh;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:72px 18px 48px;
-    }
-
-    .wrap{
-      width:min(980px, 100%);
-      text-align:center;
-    }
-
-    /* Единственный заголовок */
-    h1{
-      margin:0 0 56px 0;
-      color:var(--violet);
-      font-weight:500;
-      font-size:clamp(30px, 4vw, 44px);
-      letter-spacing:1px;
-    }
-
-    .grid{
-      display:grid;
-      gap:16px 22px;
-      justify-content:center;
-      grid-template-columns:repeat(2, minmax(260px, 360px));
-      margin:0 auto;
-      width:fit-content;
-    }
-
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height:56px;
-      padding:0 18px;
-      text-decoration:none;
-      background:var(--btn-violet);
-      color:#fff;
-      font-size:20px;
-      font-weight:600;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      border-radius:2px;
-      border:1px solid var(--border-soft);
-      cursor:pointer;
-      user-select:none;
-    }
-
-    .btn:hover{ opacity:.92; }
-
-    .back{
-      margin-top:38px;
-    }
-
-    .back a{
-      color:var(--violet);
-      text-decoration:none;
-      font-style:italic;
-      font-variant:small-caps;
-      font-weight:700;
-      letter-spacing:1px;
-      font-size:22px;
-    }
-
-    .back a:hover{
-      text-decoration:underline;
-    }
-
-    @media (max-width: 720px){
-      .grid{
-        grid-template-columns:1fr;
-        width:100%;
-      }
-      .btn{ height:54px; }
-    }
+    /* -12pt: опустить возвратную ссылку (список ссылок) в конце */
+    #liens ul { margin-top: 12pt; }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <div class="wrap">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-      <h1>Temps de l’Avent</h1>
+  <header class="site-header">
+    <div class="container">
+      <p class="site-kicker"><a href="index.html">La Liturgie des Heures</a></p>
+      <h1 class="site-title">Avent</h1>
+      <p class="site-subtitle">Cheminement vers Noël : repères, semaines et accès rapide.</p>
 
-      <div class="grid">
-        <a class="btn" href="#">I<sup>re</sup> semaine</a>
-        <a class="btn" href="#">II<sup>e</sup> semaine</a>
-        <a class="btn" href="#">III<sup>e</sup> semaine</a>
-        <a class="btn" href="#">IV<sup>e</sup> semaine</a>
-      </div>
-
-      <div class="back">
-        <a href="index.html">Retour à l’accueil</a>
-      </div>
-
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="presentation.html">Présentation</a>
+        <a href="avent.html" aria-current="page">Avent</a>
+      </nav>
     </div>
-  </main>
-</body>
-</html>
+  </header>
+
+  <main id="contenu" class="container">
+    <section class="card">
+      <h2>En bref</h2>
+      <ul>
+        <li><strong>Deux parties</strong> : jusqu’au 16 décembre (Avent “ordinaire”), puis du 17 au 24 (grandes antiennes “O”).</li>
+        <li><strong>Dimanches</strong> : 1er, 2e, 3e (Gaudete), 4e dimanche de l’Avent.</li>
+        <li><strong>Couleur</strong> : violet (rose possible au 3e dimanche).</li>
+      </ul>
+    </section>
+
+    <section class="card" id="acces-rapide">
+      <h2>Accès rapide</h2>
+
+      <!-- Boutons semaines (corrigés) -->
+      <div class="grid" aria-label="Accès par semaine">
+        <a class="tile" href="#semaine-1">I<sup>re</sup> semaine</a>
+        <a class="tile" href="#semaine-2">II<sup>e</sup> semaine</a>
+        <a class="tile" href="#semaine-3">III<sup>e</sup> semaine</a>
+        <a class="tile" href="#semaine-4">IV<sup>e</sup> semaine</a>
+      </div>
+
+      <p class="note">Pour l’instant, ce sont des ancres (placeholders). Ensuite, on branchera vers les pages “jours” ou “offices”.</p>
+
+      <!-- Accès thématiques conservés (si tu veux, on peut les enlever au prochain tour) -->
+      <div class="grid" aria-label="Accès thématique">
+        <a class="tile" href="#dimanches">Dimanches</a>
+        <a class="tile" href="#feries">Féries</a>
+        <a class="tile" href="#du17au24">Du 17 au 24 décembre</a>
+        <a class="tile" href="#liens">Liens</a>
+      </div>
+    </section>
+
+    <!-- Sections semaines (placeholders) -->
+    <section class="card" id="semaine-1">
+      <h2>I<sup>re</sup> semaine</h2>
+      <p>(À relier : dimanche I + féries de la semaine.)</p>
+    </section>
+
+    <section class="card" id="semaine-2">
+      <h2>II<sup>e</sup> semaine</h2>
+      <p>(À relier : dimanche II + féries de la semaine.)</p>
+    </section>
+
+    <section class="card" id="semaine-3">
+      <h2>III<sup>e</sup> semaine</h2>
+      <p>(À relier : dimanche III — Gaudete + féries de la semaine.)</p>
+    </section>
+
+    <section class="card" id="semaine-4">
+      <h2>IV<sup>e</sup> semaine</h2>
+      <p>(À relier : dimanche IV + féries, puis bascule vers le 17–24.)</p>
+    </section>
+
+    <s
