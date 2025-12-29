@@ -34,13 +34,12 @@
 
     .wrap{
       width:min(980px, 100%);
-      margin:0 0 72px 0;
-
+      text-align:center;
     }
 
     /* Единственный заголовок */
     h1{
-      margin:0 0 56px 0;
+      margin:0 0 72px 0; /* было 56px; +12pt ≈ +16px => 72px */
       color:var(--violet);
       font-weight:500;
       font-size:clamp(30px, 4vw, 44px);
@@ -49,7 +48,8 @@
 
     .grid{
       display:grid;
-      gap:16px 22px;
+      /* было gap:16px 22px; вертикальный разрыв между рядами казался лишним */
+      gap:8px 22px;
       justify-content:center;
       grid-template-columns:repeat(2, minmax(260px, 360px));
       margin:0 auto;
@@ -68,25 +68,29 @@
       font-size:20px;
       font-weight:600;
       letter-spacing:1px;
-          /* Стабильные верхние индексы (re/e) */
-    .btn sup{
-      font-size: .65em;
-      vertical-align: super;
-      line-height: 0;
-      letter-spacing: 0;
-    }
       text-transform:uppercase;
-      margin-top:54px;
-
+      border-radius:2px;
       border:1px solid var(--border-soft);
       cursor:pointer;
       user-select:none;
+      white-space:nowrap; /* чтобы “I re semaine” не ломалось переносами */
     }
 
     .btn:hover{ opacity:.92; }
 
+    /* Стабильный "индекс" для re/e (пробивает любые странности) */
+    .btn sup{
+      font-size:0.62em;
+      line-height:0;
+      position:relative;
+      top:-0.55em;
+      letter-spacing:0;
+      text-transform:none; /* чтобы re/e не превращалось в RE/E */
+    }
+
     .back{
-      margin-top:38px;
+      margin-top:54px; /* было 38px; +12pt≈+16px => 54px */
+      text-align:center;
     }
 
     .back a{
@@ -120,10 +124,10 @@
       <h1>Temps de l’Avent</h1>
 
       <div class="grid">
-        <a class="btn" href="#">I<sup>re</sup> semaine</a>
-        <a class="btn" href="#">II<sup>e</sup> semaine</a>
-        <a class="btn" href="#">III<sup>e</sup> semaine</a>
-        <a class="btn" href="#">IV<sup>e</sup> semaine</a>
+        <a class="btn" href="#">I<sup>re</sup>&nbsp;semaine</a>
+        <a class="btn" href="#">II<sup>e</sup>&nbsp;semaine</a>
+        <a class="btn" href="#">III<sup>e</sup>&nbsp;semaine</a>
+        <a class="btn" href="#">IV<sup>e</sup>&nbsp;semaine</a>
       </div>
 
       <div class="back">
