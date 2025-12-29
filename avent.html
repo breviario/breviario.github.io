@@ -34,7 +34,8 @@
 
     .wrap{
       width:min(980px, 100%);
-      text-align:center;
+      margin:0 0 72px 0;
+
     }
 
     /* Единственный заголовок */
@@ -67,8 +68,16 @@
       font-size:20px;
       font-weight:600;
       letter-spacing:1px;
+          /* Стабильные верхние индексы (re/e) */
+    .btn sup{
+      font-size: .65em;
+      vertical-align: super;
+      line-height: 0;
+      letter-spacing: 0;
+    }
       text-transform:uppercase;
-      border-radius:2px;
+      margin-top:54px;
+
       border:1px solid var(--border-soft);
       cursor:pointer;
       user-select:none;
