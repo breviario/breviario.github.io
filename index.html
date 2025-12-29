@@ -9,19 +9,10 @@
     :root{
       --bg:#f5f5f5;
 
-      --violet:#5a36ff;
+      /* ОСТАВЬ как было у главного заголовка (тёмно-синий). Если у тебя уже было значение — вставь его сюда. */
+      --title-blue:#0b1f3a;
+
       --txt-dark:#3a3a3a;
-
-      /* базовые кнопки */
-      --btn-violet:#5a36ff;
-      --btn-green:#46b800;
-
-      /* яркий красный */
-      --red:#ff0000;
-
-      /* максимально бледно-золотистый */
-      --gold-pale:#fff7cc;
-
       --border-soft:rgba(0,0,0,.08);
     }
 
@@ -47,99 +38,39 @@
       text-align:center;
     }
 
-    h1{
-      margin:0 0 28px 0;
-      color:var(--violet);
-      font-weight:500;
-      text-transform:uppercase;
-      font-size:clamp(35px, 4.2vw, 59px);
-      letter-spacing:2.4px;
-      word-spacing:0.12em;
-    }
-
-    .sub{
-      margin:0;
-      color:#d40000;
-      font-weight:400;
-      font-size:clamp(28px, 3.3vw, 34px);
-      line-height:1.35;
-    }
-
-    .lead{
-      margin:80px 0 32px 0;
-      color:#8f2f3c;
-      font-size:clamp(19px, 2.4vw, 25px);
-      font-weight:400;
-    }
-
-    .grid{
-      display:grid;
-      gap:16px 22px;
-      justify-content:center;
-      grid-template-columns:repeat(4, minmax(160px, 210px));
-      margin:0 auto;
-      width:fit-content;
-    }
-
-    .grid.row2{
-      margin-top:14px;
-      grid-template-columns:repeat(3, minmax(220px, 300px));
-    }
-
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height:56px;
-      padding:0 14px;
+    /* Шапка сайта — НЕ ТРОГАЮ */
+    .site-home{
+      display:block;
+      margin:0 0 80px 0;
       text-decoration:none;
-      font-weight:600;
-      font-size:20px;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      border-radius:2px;
-      border:1px solid var(--border-soft);
-      cursor:pointer;
-      user-select:none;
-    }
-
-    /* базовые цвета */
-    .v{ background:var(--btn-violet); color:#fff; }
-    .g{ background:var(--btn-green); color:#fff; }
-
-    /* Noël и Temps pascal — одинаковые */
-    .y{
-      background:var(--gold-pale);
-      color:var(--red);
-    }
-
-    .below{
-      margin-top:80px;
-    }
-
-    .below a{
-      color:var(--violet);
-      text-decoration:none;
-      font-size:clamp(23px, 2.8vw, 29px);
-      font-style:italic;
-      font-variant:small-caps;
+      color:var(--title-blue);
       font-weight:700;
+      letter-spacing:3.3px;
+      font-size:clamp(26px, 3vw, 34px);
+    }
+
+    /* ГЛАВНЫЙ заголовок — красный (#d40000) */
+    h1{
+      margin-top:0;
+      margin-bottom:64px;
+      color:#d40000;
+      font-weight:500;
+      font-size:clamp(34px, 5vw, 56px);
       letter-spacing:1px;
     }
 
-    .below a:hover{
-      text-decoration:underline;
+    /* Подзаголовок — тёмно-синий, как был главный заголовок */
+    .intro{
+      max-width:720px;
+      margin:0 auto;
+      font-size:18px;
+      line-height:1.5;
+      color:var(--title-blue);
     }
 
-    @media (max-width: 860px){
-      .grid{
-        grid-template-columns:repeat(2, minmax(160px, 1fr));
-        width:100%;
-      }
-      .grid.row2{
-        grid-template-columns:repeat(1, minmax(220px, 1fr));
-      }
-      .btn{ height:54px; }
+    @media (max-width: 720px){
+      h1{ margin-bottom:48px; }
+      .site-home{ margin-bottom:64px; }
     }
   </style>
 </head>
@@ -148,25 +79,16 @@
   <main class="page">
     <div class="wrap">
 
-      <h1>LA LITURGIE DES HEURES</h1>
+      <a class="site-home" href="index.html">LA LITURGIE DES HEURES</a>
 
-      <p class="sub">Version numérique à l’usage privé</p>
+      <h1>La Liturgie des Heures</h1>
 
-      <p class="lead">
-        Veuillez consulter ou télécharger les célébrations voulues :
+      <p class="intro">
+        Prière quotidienne de l’Église, rythmant les heures du jour
+        par les psaumes, les lectures et les hymnes, au fil de l’année liturgique.
       </p>
 
-      <div class="grid">
-        <a class="btn v" href="avent.html">Avent</a>
-        <a class="btn y" href="noel.html">Noël</a>
-        <a class="btn g" href="to-1-9.html">TO I–IX</a>
-        <a class="btn v" href="careme.html">Carême</a>
-      </div>
-
-      <div class="grid row2">
-        <a class="btn y" href="temps-pascal.html">Temps pascal</a>
-        <a class="btn g" href="to-7-18.html">TO VII–XVIII</a>
-        <a class="btn g" href="to-19-34.html">TO XIX–XXXIV</a>
-      </div>
-
-      <div class="below">
+    </div>
+  </main>
+</body>
+</html>
